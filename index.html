@@ -36,8 +36,8 @@
             top: 0; left: 0;
             width: 100vw; height: 100vh;
             background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), 
-                        url('images/Epic fondo.jpg') center center / cover no-repeat;
-            z-index: -1; /* Corregido aquí */
+                        url('images/Epic%20fondo.jpg') center center / cover no-repeat;
+            z-index: -1;
         }
 
         .linktree-container {
@@ -113,7 +113,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
-            z-index: 1000;
+            z-index: 9999;
             padding: 1rem;
         }
 
@@ -145,6 +145,7 @@
             color: var(--text-light);
             font-size: 2.2rem;
             cursor: pointer;
+            z-index: 10;
         }
         .close-modal:hover { color: var(--accent-green); }
 
@@ -210,7 +211,7 @@
 
     <main class="linktree-container">
         <header class="brand-header">
-            <img src="images/Logo fondo.jpg" alt="Skalibur Gym Logo" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #00FF66; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,102,0.4);">
+            <img src="images/Logo%20fondo.jpg" alt="Skalibur Gym Logo" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #00FF66; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,102,0.4);">
             <h1 class="neon-logo">SKALIBUR GYM</h1>
             <p class="slogan">Construimos tu mejor versión</p>
         </header>
@@ -244,7 +245,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Gold Standard 100% Whey ON">
-                    <div class="card-img-container"><img src="images/Gold standar....jpg" alt="Gold Standard" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Gold%20standar....jpg" alt="Gold Standard" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Gold Standard 100% Whey ON</h3>
                         <p class="product-desc">24g de proteína, 5.5g de BCAAs. Sabor Vanilla.</p>
@@ -253,7 +254,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Creatina GMN 300g">
-                    <div class="card-img-container"><img src="images/Creatina 300g.jpg" alt="Creatina GMN" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Creatina%20300g.jpg" alt="Creatina GMN" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Creatina GMN (300g)</h3>
                         <p class="product-desc">Potencia tu rendimiento al máximo. 100 porciones.</p>
@@ -262,7 +263,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Whey Phorm Cappuccino">
-                    <div class="card-img-container"><img src="images/Whey form.jpg" alt="Whey Phorm" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Whey%20form.jpg" alt="Whey Phorm" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Whey Phorm Cappuccino</h3>
                         <p class="product-desc">25g de proteína por porción. Sabor gourmet cremoso.</p>
@@ -271,7 +272,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Burner Stack Nutramerican">
-                    <div class="card-img-container"><img src="images/Burner stack.jpg" alt="Burner Stack" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Burner%20stack.jpg" alt="Burner Stack" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Burner Stack (360g)</h3>
                         <p class="product-desc">L-Carnitina, Taurina, Picolinato de Cromo y Cafeína.</p>
@@ -280,7 +281,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="L-Carnitine 3000 Nutrex">
-                    <div class="card-img-container"><img src="images/Creatina otra.jpg" alt="L-Carnitine" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Creatina%20otra.jpg" alt="L-Carnitine" loading="lazy"></div>
                     <div class="card-body">
                         <h3>L-Carnitine 3000 Nutrex</h3>
                         <p class="product-desc">Apoya el metabolismo de las grasas y energía.</p>
@@ -307,7 +308,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Redcon1 MRE Lite">
-                    <div class="card-img-container"><img src="images/Mre lite.jpg" alt="MRE Lite" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Mre%20lite.jpg" alt="MRE Lite" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Redcon1 MRE Lite</h3>
                         <p class="product-desc">24g de proteína de alimentos enteros sin suero.</p>
@@ -316,7 +317,7 @@
                     </div>
                 </article>
                 <article class="product-card" data-product-name="Serious Mass Optimum Nutrition">
-                    <div class="card-img-container"><img src="images/Serious mass.jpg" alt="Serious Mass" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Serious%20mass.jpg" alt="Serious Mass" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Serious Mass ON</h3>
                         <p class="product-desc">50g de proteína y 1,250 calorías para ganar masa.</p>
@@ -353,17 +354,17 @@
             <h2 class="modal-title">📅 Clases y Eventos</h2>
             <div class="events-list">
                 <div class="event-card">
-                    <img src="images/Lunes latino.jpg" alt="Lunes Latino" class="event-img">
+                    <img src="images/Lunes%20latino.jpg" alt="Lunes Latino" class="event-img">
                     <h3>💃 Lunes Latino</h3>
                     <p>Todos los lunes a las 7:00 PM. ¡Trae a tu invitado!</p>
                 </div>
                 <div class="event-card">
-                    <img src="images/Jueves rumbero.jpg" alt="Jueves Rumbero" class="event-img">
+                    <img src="images/Jueves%20rumbero.jpg" alt="Jueves Rumbero" class="event-img">
                     <h3>🕺 Jueves Rumbero</h3>
                     <p>Todos los jueves a las 7:00 PM. Rompe la rutina.</p>
                 </div>
                 <div class="event-card">
-                    <img src="images/Evento 1 noviembre.jpg" alt="Team Monito" class="event-img">
+                    <img src="images/Evento%201%20noviembre.jpg" alt="Team Monito" class="event-img">
                     <h3>🔥 Evento Especial: Team Monito Suesca</h3>
                     <p>01 de Noviembre | 6:30 PM | Show de luces, DJ y premios.</p>
                 </div>
@@ -376,7 +377,7 @@
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <h2 class="modal-title">💪 Nuestra Familia</h2>
-            <img src="images/Nuestra comunidad.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+            <img src="images/Nuestra%20comunidad.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:10px; margin-bottom:1rem;">
             <p>Un equipo enfocado en tu progreso diario. Guía, disciplina y ambiente único en Suesca.</p>
         </div>
     </div>
@@ -387,10 +388,9 @@
     <div class="modal" id="modal-ubicacion"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">📍 Ubicación</h2><p>Suesca, Cundinamarca - Tercer piso del Ara.</p></div></div>
     <div class="modal" id="modal-contacto"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">💬 Contáctanos</h2><p>Escríbenos directamente a través de nuestros botones de tienda o clases para atenderte al instante.</p></div></div>
 
-    <!-- SCRIPT JS GLOBAL -->
+    <!-- SCRIPT JS BLINDADO -->
     <script>
         document.addEventListener('click', (e) => {
-            // Abrir modal
             const trigger = e.target.closest('[data-modal-target]');
             if (trigger) {
                 const modalId = trigger.getAttribute('data-modal-target');
@@ -401,7 +401,6 @@
                 }
             }
 
-            // Cerrar con botón X
             const closeBtn = e.target.closest('.close-modal');
             if (closeBtn) {
                 const modal = closeBtn.closest('.modal');
@@ -411,7 +410,22 @@
                 }
             }
 
-            // Cerrar haciendo clic afuera del modal
             const modalOverlay = e.target.closest('.modal');
             if (modalOverlay && e.target === modalOverlay) {
-                modalOverla
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            const buyBtn = e.target.closest('.btn-buy');
+            if (buyBtn) {
+                const card = buyBtn.closest('.product-card');
+                const productName = card.getAttribute('data-product-name');
+                const WHATSAPP_NUMBER = "573000000000"; // Reemplaza con tu número real
+                const message = `¡Hola Skalibur Gym! 💪 Estoy interesado en adquirir o consultar precio sobre: *${productName}*. ¿Me dan información?`;
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
+                    
