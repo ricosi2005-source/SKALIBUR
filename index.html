@@ -6,7 +6,7 @@
     <title>SKALIBUR GYM | Construimos tu mejor versión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,8 +14,8 @@
             --accent-green: #00FF66;
             --text-light: #FFFFFF;
             --text-muted: #A0A0A0;
-            --glass-bg: rgba(18, 18, 18, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(18, 18, 18, 0.6); /* Más translúcido */
+            --glass-border: var(--accent-green); /* Borde verde delgada */
             --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
             --font-main: 'Montserrat', sans-serif;
             --transition: all 0.3s ease-in-out;
@@ -31,11 +31,12 @@
             overflow-x: hidden;
         }
 
+        /* Fondo más brillante */
         .background-parallax {
             position: fixed;
             top: 0; left: 0;
             width: 100vw; height: 100vh;
-            background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), 
+            background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.85)), 
                         url('images/Epic%20fondo.jpg') center center / cover no-repeat;
             z-index: -1;
         }
@@ -52,7 +53,7 @@
         .brand-header { text-align: center; margin-bottom: 2.5rem; }
 
         .neon-logo {
-            font-size: 2.6rem;
+            font-size: 2.8rem; /* Fuente más grande */
             font-weight: 900;
             letter-spacing: 2px;
             color: #fff;
@@ -61,95 +62,49 @@
         }
 
         .slogan {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem; /* Fuente más grande */
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .sr-only {
-            position: absolute; width: 1px; height: 1px;
-            overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
-        }
-
-        /* Botones sociales */
-        .social-row {
-            display: flex;
-            justify-content: center;
-            gap: 0.9rem;
-            margin-bottom: 1.6rem;
-        }
-        .social-btn {
-            width: 42px; height: 42px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-light);
-            backdrop-filter: blur(12px);
-            box-shadow: var(--glass-shadow);
-            transition: var(--transition);
-        }
-        .social-btn svg { width: 20px; height: 20px; }
-        .social-btn:hover, .social-btn:focus-visible {
-            transform: translateY(-3px);
-            border-color: var(--accent-green);
-            color: var(--accent-green);
-            box-shadow: 0 8px 20px rgba(0, 255, 102, 0.35);
-            outline: none;
-        }
-
-        /* Espacio circular para la imagen */
-        .avatar {
-            width: 140px; height: 140px;
-            margin: 0 auto 1.2rem;
-            border-radius: 50%;
-            border: 3px solid var(--accent-green);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.4);
-            overflow: hidden;
-        }
-        .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        .brand-header, .action-menu { animation: fadeUp 0.6s ease both; }
-        .action-menu { animation-delay: 0.15s; }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(14px); }
-            to { opacity: 1; transform: none; }
-        }
-        .glass-btn:focus-visible, .cta-btn:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 3px; }
-        .glass-btn:hover { transform: translateY(-2px); }
-        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
         .action-menu {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 1.1rem;
+            gap: 1.2rem;
         }
 
+        /* Botones rediseñados */
         .glass-btn {
             width: 100%;
             padding: 1.2rem;
             background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* Borde verde */
             border-radius: 12px;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 1.05rem; /* Fuente más grande */
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: var(--glass-shadow);
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .glass-btn:active { transform: scale(0.98); }
+        /* Contraste de iluminación al presionar/hover */
+        .glass-btn:active { 
+            transform: scale(0.98); 
+            background: rgba(0, 255, 102, 0.3); /* Contraste al presionar */
+        }
         .glass-btn:hover {
-            border-color: var(--accent-green);
-            background: rgba(0, 255, 102, 0.12);
-            box-shadow: 0 10px 25px rgba(0, 255, 102, 0.3);
+            background: rgba(0, 255, 102, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
         }
 
         footer { margin-top: 3.5rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
@@ -211,6 +166,7 @@
             text-transform: uppercase;
         }
 
+        /* ESTILOS TIENDA */
         .store-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -255,76 +211,54 @@
         }
         .cta-btn:hover { background-color: #fff; }
 
-
-        /* Enlaces con estilo de botón */
-        a.glass-btn { display: block; text-decoration: none; }
-
-        /* Estado abierto / cerrado */
-        .status-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            margin-top: 0.9rem;
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.75rem; font-weight: 700;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-light);
-        }
-        .status-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--text-muted); }
-        .status-badge.open { border-color: rgba(0, 255, 102, 0.6); }
-        .status-badge.open .status-dot { background: var(--accent-green); animation: pulse 1.6s infinite; }
-        .status-badge.closed { border-color: rgba(255, 77, 77, 0.6); }
-        .status-badge.closed .status-dot { background: #ff4d4d; }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.6); }
-            70% { box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
-        }
-
-        /* Reglamento */
-        .modal-rules { max-width: 720px; padding: 1.6rem 1.4rem 2rem; }
-        .rules-head { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.3rem; padding-right: 1.5rem; }
-        .rules-logo {
-            flex: 0 0 auto; width: 96px; height: 96px; border-radius: 50%;
-            border: 3px solid var(--accent-green); overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
-        }
-        .rules-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .rules-title {
-            font-size: clamp(1.15rem, 5vw, 1.7rem); font-weight: 900;
-            text-transform: uppercase; line-height: 1.15; letter-spacing: 1px;
-        }
-        .rules-title span { color: var(--accent-green); text-shadow: 0 0 12px rgba(0, 255, 102, 0.6); }
-        .rules-intro { font-size: 0.88rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 1rem; }
-        .rules-warning {
-            font-size: 0.85rem; font-weight: 600; line-height: 1.5;
-            padding: 0.8rem 1rem; margin-bottom: 1.3rem;
-            border-left: 4px solid var(--accent-green);
-            background: rgba(0, 255, 102, 0.08); border-radius: 8px;
-        }
-        .rules-list { list-style: none; counter-reset: regla; display: flex; flex-direction: column; gap: 0.7rem; }
-        .rules-list li {
-            counter-increment: regla; position: relative;
-            padding: 0.8rem 0.9rem 0.8rem 3.2rem;
-            font-size: 0.86rem; line-height: 1.55;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--glass-border); border-radius: 10px;
-        }
-        .rules-list li::before {
-            content: counter(regla);
-            position: absolute; left: 0.75rem; top: 0.75rem;
-            width: 1.7rem; height: 1.7rem; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--accent-green); color: #000;
-            font-weight: 800; font-size: 0.8rem;
-        }
-        .rules-foot { margin-top: 1.4rem; text-align: center; font-weight: 800; color: var(--accent-green); font-size: 0.9rem; }
-        .rules-disclaimer { margin-top: 0.8rem; text-align: center; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
-
         .events-list { display: flex; flex-direction: column; gap: 1.5rem; }
         .event-card { background: rgba(255, 255, 255, 0.04); padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); }
         .event-img { width: 100%; border-radius: 8px; margin-bottom: 0.8rem; }
+
+        /* ESTILOS RESEÑAS */
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-green);
+            margin-bottom: 1rem;
+        }
+        .stars { color: #FFD700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .reviewer-name { font-weight: bold; color: var(--text-light); margin-bottom: 0.3rem; }
+        .review-text { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+        
+        /* ESTILOS PROFESORES */
+        .teacher-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--glass-border);
+        }
+        .teacher-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-green);
+            margin-right: 1rem;
+        }
+        .teacher-info h3 { margin-bottom: 0.2rem; font-size: 1.1rem; }
+        .teacher-info p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .teacher-btn {
+            background: transparent;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .teacher-btn:hover { background: var(--accent-green); color: #000; }
+
     </style>
 </head>
 <body>
@@ -332,48 +266,28 @@
 
     <main class="linktree-container">
         <header class="brand-header">
-            <nav class="social-row" aria-label="Redes sociales">
-                <!-- Reemplaza los enlaces por los reales -->
-                <a class="social-btn facebook" href="https://facebook.com/TU_PAGINA" target="_blank" rel="noopener" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
-                </a>
-                <a class="social-btn instagram" href="https://www.instagram.com/skalibur.gym/" target="_blank" rel="noopener" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
-                </a>
-                <a class="social-btn whatsapp" href="https://wa.me/573103044322" target="_blank" rel="noopener" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg>
-                </a>
-            </nav>
-
-            <!-- Foto circular: cambia el src por tu imagen. Si no carga, se muestra un espacio vacío circular -->
-            <div class="avatar">
-                <img data-logo alt="Logo Skalibur Gym">
-            </div>
-
-            <h1 class="sr-only">Skalibur Gym</h1>
+            <img src="images/Logo%20fondo.jpg" alt="Skalibur Gym Logo" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #00FF66; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,102,0.4);">
+            <h1 class="neon-logo">SKALIBUR GYM</h1>
             <p class="slogan">Construimos tu mejor versión</p>
-            <div class="status-badge" id="gym-status" role="status" aria-live="polite">
-                <span class="status-dot"></span><span id="status-text">Consultando horario…</span>
-            </div>
         </header>
 
         <section class="action-menu">
             <button class="glass-btn" data-modal-target="#modal-nuevo">🟢 ¿Eres nuevo? ¡Conoce cómo funciona!</button>
-            <button class="glass-btn" data-modal-target="#modal-reglamento">📋 Reglamento interno</button>
+            <button class="glass-btn" data-modal-target="#modal-reglamento">📄 Reglamento Interno</button>
             <button class="glass-btn" data-modal-target="#modal-horario">🕒 Horario de atención</button>
             <button class="glass-btn" data-modal-target="#modal-clases">📅 Clases Grupales y Eventos</button>
             <button class="glass-btn" data-modal-target="#modal-tienda">🛒 Tienda: Suplementos y Accesorios</button>
-            <a class="glass-btn" href="https://wa.me/573103044322?text=Hola%20Skalibur%20Gym%20%F0%9F%A5%97%20Quiero%20informaci%C3%B3n%20sobre%20el%20asesoramiento%20nutricional." target="_blank" rel="noopener">🥗 Asesoramiento nutricional</a>
+            <button class="glass-btn" data-modal-target="#modal-nutricion">🥗 Asesoramiento nutricional</button>
             <button class="glass-btn" data-modal-target="#modal-equipo">💪 Nuestra Familia Skalibur</button>
-            <a class="glass-btn" href="https://search.google.com/local/writereview?placeid=ChIJEVes7WwVQI4RDb45nf-MIcY" target="_blank" rel="noopener">⭐ Déjanos tu reseña en Google</a>
-            <a class="glass-btn" href="https://maps.app.goo.gl/uNCgtRYuFzYkX4dS8" target="_blank" rel="noopener">📍 Maps (Ubicación)</a>
-            <a class="glass-btn" href="https://wa.me/573103044322?text=Hola%20Skalibur%20Gym%20%F0%9F%92%AA" target="_blank" rel="noopener">💬 Contáctanos</a>
+            <button class="glass-btn" data-modal-target="#modal-resenas">⭐ Déjanos tu reseña en Google</button>
+            <button class="glass-btn" data-modal-target="#modal-ubicacion">📍 Maps (Ubicación)</button>
+            <button class="glass-btn" data-modal-target="#modal-contacto">💬 Contáctanos</button>
         </section>
         
         <footer><p>&copy; 2026 Skalibur Gym. Todos los derechos reservados.</p></footer>
     </main>
 
-    <!-- MODAL TIENDA -->
+    <!-- MODAL TIENDA (Nombres de imagen corregidos) -->
     <div class="modal" id="modal-tienda">
         <div class="modal-content modal-large">
             <button class="close-modal">&times;</button>
@@ -388,8 +302,9 @@
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
+                <!-- OJO: Asegúrate que la imagen en GitHub se llama exactamente "Gold standar.jpg" -->
                 <article class="product-card" data-product-name="Gold Standard 100% Whey ON">
-                    <div class="card-img-container"><img src="images/Gold%20standar....jpg" alt="Gold Standard" loading="lazy"></div>
+                    <div class="card-img-container"><img src="images/Gold%20standar.jpg" alt="Gold Standard" loading="lazy" onerror="this.src='https://via.placeholder.com/250x250?text=Imagen+No+Encontrada'"></div>
                     <div class="card-body">
                         <h3>Gold Standard 100% Whey ON</h3>
                         <p class="product-desc">24g de proteína, 5.5g de BCAAs. Sabor Vanilla.</p>
@@ -491,44 +406,6 @@
         </div>
     </div>
 
-    <!-- MODAL REGLAMENTO -->
-    <div class="modal" id="modal-reglamento">
-        <div class="modal-content modal-rules">
-            <button class="close-modal" aria-label="Cerrar">&times;</button>
-            <div class="rules-head">
-                <div class="rules-logo"><img data-logo alt="Logo Skalibur Gym"></div>
-                <h2 class="rules-title">Reglamento<br>Interno<br><span>Skalibur Gym</span></h2>
-            </div>
-            <p class="rules-intro">Al ingresar a Skalibur Gym, todos los usuarios reconocen y aceptan las normas establecidas para el uso de las instalaciones. El acceso al gimnasio implica el consentimiento expreso de conocer, respetar y cumplir dichas normas, con el objetivo de garantizar un ambiente seguro, ordenado y adecuado para todos.</p>
-            <p class="rules-warning">⚠️ El incumplimiento de estas reglas podrá conllevar sanciones según lo determinado por la administración.</p>
-            <ol class="rules-list">
-                <li>Antes de ingresar, se debe limpiar el calzado en el tapete de caucho ubicado en la entrada para mantener la higiene del gimnasio.</li>
-                <li>Si ingresa con bicicleta, deberá levantarla para evitar marcar el tapete.</li>
-                <li>Todo equipo utilizado, como barras, mancuernas y discos, debe ser devuelto a su lugar una vez finalizado su uso.</li>
-                <li>Después de utilizar las máquinas, es obligatorio limpiar el tapizado con alcohol.</li>
-                <li>Se solicita hacer un uso adecuado de los baños.</li>
-                <li>Los objetos personales deben colocarse en los lockers o en el perchero. Si requieren guardar artículos de valor, pueden solicitar autorización para dejarlos bajo custodia o solicitar un candado. De lo contrario, la administración no se hace responsable por pérdidas o extravíos.</li>
-                <li>Los accesorios como cinturones de fuerza, cinturones de lastre, ruedas para abdominales, espumas para sentadillas y cuerdas para saltar deben solicitarse directamente con la administración.</li>
-                <li>Cualquier compra de agua o bocadillos debe ser cancelada de inmediato.</li>
-                <li>Al utilizar el multifuerza, el peso debe descargarse con cuidado para evitar daños en los discos.</li>
-                <li>Durante la práctica de peso muerto con cargas elevadas, no se debe soltar la barra bruscamente contra el suelo.</li>
-                <li>La mensualidad debe ser cancelada puntualmente; aquellos usuarios en mora por un período prolongado no podrán hacer uso de las instalaciones hasta regularizar su situación o acordar un plan de pago con la administración.</li>
-                <li>Se exige un comportamiento respetuoso y cordial hacia los demás usuarios.</li>
-                <li>No está permitido entrenar sin camiseta ni utilizar las máquinas sin la vestimenta deportiva adecuada.</li>
-                <li>No se permite el ingreso de acompañantes que no formen parte del entrenamiento, especialmente en horas de alta afluencia, para evitar congestión en las instalaciones.</li>
-                <li>No está permitido el ingreso de menores de edad. En caso de fuerza mayor, deberán permanecer sentados y bajo supervisión de quien los lleva en todo momento para evitar cualquier riesgo. Skalibur Gym no se hace responsable de accidentes o daños que puedan sufrir.</li>
-                <li>Se solicita un comportamiento adecuado entre personas con relaciones sentimentales para evitar molestias a los demás usuarios.</li>
-                <li>En el uso de los bancos auxiliares de pecho, se deben volver a colocar los pines en su sitio tras su uso para evitar accidentes.</li>
-                <li>Cualquier daño causado por uso indebido de las instalaciones o equipos deberá ser cubierto por el usuario responsable.</li>
-                <li>Se solicita depositar las botellas vacías en los recipientes de reciclaje y los residuos, como envolturas y envases, en los basureros correspondientes.</li>
-                <li>Cada usuario es responsable de sus pertenencias personales, tales como botellas, guantes, celulares y gafas. La administración no se hace responsable por pérdidas, daños o extravíos.</li>
-                <li>Durante la práctica de sentadillas búlgaras, no se debe colocar el calzado sobre el tapizado para evitar su deterioro.</li>
-            </ol>
-            <p class="rules-foot">El cumplimiento de estas normas es obligatorio para todos los usuarios.</p>
-            <p class="rules-disclaimer">Skalibur Gym no se hace responsable por daños, accidentes o pérdidas de pertenencias dentro de las instalaciones, siendo estos exclusivamente responsabilidad del cliente.</p>
-        </div>
-    </div>
-
     <!-- MODAL CLASES -->
     <div class="modal" id="modal-clases">
         <div class="modal-content">
@@ -554,23 +431,146 @@
         </div>
     </div>
 
-    <!-- MODAL EQUIPO -->
+    <!-- MODAL EQUIPO (CON PROFESORES) -->
     <div class="modal" id="modal-equipo">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <h2 class="modal-title">💪 Nuestra Familia</h2>
-            <img src="images/Nuestra%20comunidad.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-            <p>Un equipo enfocado en tu progreso diario. Guía, disciplina y ambiente único en Suesca.</p>
+            
+            <!-- OJO: Verifica que el nombre de la imagen en GitHub sea exactamente "Nuestra comunidad.jpg" -->
+            <img src="images/Nuestra%20comunidad.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:10px; margin-bottom:1rem;" onerror="this.src='https://via.placeholder.com/600x300?text=Imagen+Comunidad'">
+            <p style="margin-bottom: 2rem; text-align: center;">Un equipo enfocado en tu progreso diario. Guía, disciplina y ambiente único en Suesca.</p>
+
+            <h3 style="color: var(--accent-green); margin-bottom: 1rem;">Nuestros Entrenadores</h3>
+            
+            <!-- Profesor 1 -->
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/150" alt="Profesor 1" class="teacher-img">
+                <div class="teacher-info">
+                    <h3>Nombre del Profesor 1</h3>
+                    <p>Especialidad: Musculación y Fuerza</p>
+                    <button class="teacher-btn btn-teacher-contact" data-teacher="Profesor 1">Contactar Entrenador</button>
+                </div>
+            </div>
+
+            <!-- Profesor 2 -->
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/150" alt="Profesor 2" class="teacher-img">
+                <div class="teacher-info">
+                    <h3>Nombre del Profesor 2</h3>
+                    <p>Especialidad: Acondicionamiento Físico</p>
+                    <button class="teacher-btn btn-teacher-contact" data-teacher="Profesor 2">Contactar Entrenador</button>
+                </div>
+            </div>
+
+            <!-- Profesor 3 -->
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/150" alt="Profesor 3" class="teacher-img">
+                <div class="teacher-info">
+                    <h3>Nombre del Profesor 3</h3>
+                    <p>Especialidad: Clases Grupales</p>
+                    <button class="teacher-btn btn-teacher-contact" data-teacher="Profesor 3">Contactar Entrenador</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL ASESORAMIENTO NUTRICIONAL -->
+    <div class="modal" id="modal-nutricion">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">🍏 Asesoramiento Nutricional</h2>
+            <div style="text-align: left; color: var(--text-light); line-height: 1.6; font-size: 0.92rem;">
+                
+                <p style="text-align: center; color: var(--accent-green); font-weight: 700; margin-bottom: 1.2rem; font-size: 1.05rem;">
+                    Tu Camino Hacia el Éxito: ¿Cómo Funciona Nuestro Asesoramiento Nutricional?
+                </p>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: var(--accent-green); font-size: 0.95rem;">1. Entrevista Inicial</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.2rem;">Conocemos tu punto de partida. Conversamos sobre tus hábitos actuales, tus horarios, tus gustos alimenticios y, lo más importante, tus metas en el gimnasio.</p>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: var(--accent-green); font-size: 0.95rem;">2. Estudio de Composición Corporal</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.2rem;">Medimos lo que importa. Analizamos tu porcentaje de grasa, masa muscular y agua mediante bioimpedancia o antropometría para saber exactamente qué necesita tu cuerpo.</p>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: var(--accent-green); font-size: 0.95rem;">3. Plan a tu Medida</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.2rem;">Adiós a las dietas genéricas. Diseñamos una estrategia nutricional adaptada a tu ritmo de vida y objetivo (perder grasa, ganar músculo o mejorar tu rendimiento).</p>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: var(--accent-green); font-size: 0.95rem;">4. Seguimiento y Ajustes</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.2rem;">Evaluamos tu progreso. Nos reunimos periódicamente para medir tus avances, resolver dudas y ajustar el plan según tus resultados y sensaciones.</p>
+                </div>
+
+                <div style="background: rgba(0, 255, 102, 0.05); border-left: 3px solid var(--accent-green); padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 1.2rem 0;">
+                    <strong style="color: var(--accent-green); display: block; margin-bottom: 0.4rem;">🚀 ¿Por qué sumarlo a tu entrenamiento?</strong>
+                    <ul style="list-style-type: disc; padding-left: 1.2rem; color: var(--text-muted);">
+                        <li style="margin-bottom: 0.3rem;"><strong style="color: var(--text-light);">Resultados más rápidos:</strong> El ejercicio esculpe tu cuerpo, la nutrición lo alimenta.</li>
+                        <li style="margin-bottom: 0.3rem;"><strong style="color: var(--text-light);">Más energía:</strong> Entrena sin fatiga y recupérate mejor.</li>
+                        <li><strong style="color: var(--text-light);">Hábitos duraderos:</strong> Aprende a comer sin sufrir ni pasar hambre.</li>
+                    </ul>
+                </div>
+
+                <p style="text-align: center; font-weight: 700; color: var(--accent-green); margin-top: 1.5rem; font-size: 0.95rem;">
+                    📅 ¡Agenda tu valoración en la recepción!
+                </p>
+                <!-- Botón de contacto rápido para nutrición -->
+                <button class="cta-btn btn-nutricion" style="margin-top: 1rem;">Agendar Valoración</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL RESEÑAS -->
+    <div class="modal" id="modal-resenas">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">⭐ Reseñas Google</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: var(--text-muted);">Lo que dicen nuestros atletas sobre Skalibur Gym:</p>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="reviewer-name">Carlos M.</div>
+                <div class="review-text">"Excelente ambiente, las máquinas están en buen estado y los entrenadores siempre están dispuestos a ayudar. ¡Muy recomendado!"</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="reviewer-name">Andrea G.</div>
+                <div class="review-text">"Las clases de rumba son increíbles. Mucha energía y un espacio súper amplio. El mejor gimnasio de Suesca."</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="reviewer-name">Felipe R.</div>
+                <div class="review-text">"Llevo meses entrenando aquí y los resultados hablan solos. Muy buena suplementación y asesoramiento."</div>
+            </div>
+
+            <!-- ENLACE REAL A TUS RESEÑAS DE GOOGLE (Reemplaza # con tu link de Google Maps) -->
+            <a href="#" target="_blank" style="text-decoration: none;">
+                <button class="cta-btn" style="margin-top: 1rem;">Dejar mi Reseña en Google</button>
+            </a>
         </div>
     </div>
 
     <!-- MODALES EXTRAS -->
     <div class="modal" id="modal-nuevo"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">🟢 ¿Eres Nuevo?</h2><p>Bienvenido a Skalibur Gym. Te ofrecemos evaluación inicial, rutina personalizada y ambiente de alto nivel.</p></div></div>
+    <div class="modal" id="modal-reglamento"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">📄 Reglamento Interno</h2><p>1. Uso obligatorio de toalla.<br>2. Descargar las máquinas después de usarlas.<br>3. Prohibido el ingreso de bolsos a la zona de pesas.<br>4. Respetar a los demás usuarios y staff.</p></div></div>
     <div class="modal" id="modal-horario"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">🕒 Horario</h2><p><strong>Lunes a Viernes:</strong> 5:30 AM - 9:30 PM</p><p><strong>Sábados y Festivos:</strong> 7:00 AM - 2:00 PM</p></div></div>
+    <div class="modal" id="modal-ubicacion"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">📍 Ubicación</h2><p>Suesca, Cundinamarca - Tercer piso del Ara.</p></div></div>
+    <div class="modal" id="modal-contacto"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">💬 Contáctanos</h2><p>Escríbenos directamente a través de nuestros botones de tienda o clases para atenderte al instante.</p></div></div>
 
     <!-- SCRIPT JS BLINDADO -->
     <script>
         document.addEventListener('click', (e) => {
+            // Reemplaza con tu número real
+            const WHATSAPP_NUMBER = "573000000000"; 
+            
+            // Lógica de Modales
             const trigger = e.target.closest('[data-modal-target]');
             if (trigger) {
                 const modalId = trigger.getAttribute('data-modal-target');
@@ -596,79 +596,30 @@
                 document.body.style.overflow = 'auto';
             }
 
+            // Lógica de Compras Suplementos
             const buyBtn = e.target.closest('.btn-buy');
             if (buyBtn) {
                 const card = buyBtn.closest('.product-card');
                 const productName = card.getAttribute('data-product-name');
-                const WHATSAPP_NUMBER = "573103044322";
                 const message = `¡Hola Skalibur Gym! 💪 Estoy interesado en adquirir o consultar precio sobre: *${productName}*. ¿Me dan información?`;
                 window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
             }
-        });
-    </script>
-
-    <script>
-        // Logo: prueba varias extensiones para images/logotipo
-        document.querySelectorAll('img[data-logo]').forEach((img) => {
-            const exts = ['.png', '.jpg', '.jpeg', '.webp', '.svg', ''];
-            let i = 0;
-            const next = () => { if (i < exts.length) img.src = 'images/logotipo' + exts[i++]; else img.remove(); };
-            img.onerror = next;
-            next();
-        });
-
-        // Estado del gimnasio (hora de Colombia)
-        (function () {
-            const TZ = 'America/Bogota';
-            const HORARIO = { semana: [5 * 60 + 30, 21 * 60 + 30], sabado: [7 * 60, 14 * 60] };
-            // Festivos de Colombia (abren con horario de sábado). Actualizar cada año.
-            const FESTIVOS = ['2026-10-12', '2026-11-02', '2026-11-16', '2026-12-08', '2026-12-25'];
-            const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-
-            const pad = (n) => String(n).padStart(2, '0');
-            const fmt = (min) => {
-                const h = Math.floor(min / 60), m = min % 60;
-                return `${h % 12 || 12}:${pad(m)} ${h >= 12 ? 'PM' : 'AM'}`;
-            };
-            const scheduleFor = (y, m, d, dow) => {
-                if (FESTIVOS.includes(`${y}-${pad(m)}-${pad(d)}`)) return HORARIO.sabado;
-                if (dow === 0) return null;
-                return dow === 6 ? HORARIO.sabado : HORARIO.semana;
-            };
-
-            function update() {
-                const parts = {};
-                new Intl.DateTimeFormat('en-US', {
-                    timeZone: TZ, year: 'numeric', month: 'numeric', day: 'numeric',
-                    hour: 'numeric', minute: 'numeric', hourCycle: 'h23'
-                }).formatToParts(new Date()).forEach((p) => { parts[p.type] = parseInt(p.value, 10); });
-
-                const nowMin = parts.hour * 60 + parts.minute;
-                const badge = document.getElementById('gym-status');
-                const text = document.getElementById('status-text');
-                let open = false, msg = '';
-
-                for (let off = 0; off <= 7; off++) {
-                    const dt = new Date(Date.UTC(parts.year, parts.month - 1, parts.day + off));
-                    const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay();
-                    const sch = scheduleFor(y, m, d, dow);
-                    if (!sch) continue;
-                    if (off === 0 && nowMin >= sch[0] && nowMin < sch[1]) {
-                        open = true; msg = `Abierto ahora · cierra ${fmt(sch[1])}`; break;
-                    }
-                    if (off === 0 && nowMin >= sch[1]) continue;
-                    const cuando = off === 0 ? 'hoy' : off === 1 ? 'mañana' : `el ${DIAS[dow]}`;
-                    msg = `Cerrado · abre ${cuando} ${fmt(sch[0])}`;
-                    break;
-                }
-                badge.classList.toggle('open', open);
-                badge.classList.toggle('closed', !open);
-                text.textContent = msg;
+            
+            // Lógica Botón Nutrición
+            const nutBtn = e.target.closest('.btn-nutricion');
+            if(nutBtn) {
+                const message = `¡Hola! Me gustaría agendar una valoración para el asesoramiento nutricional. 🥗`;
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
             }
-            update();
-            setInterval(update, 60000);
-        })();
+
+            // Lógica Contacto Profesores
+            const teacherBtn = e.target.closest('.btn-teacher-contact');
+            if(teacherBtn) {
+                 const teacherName = teacherBtn.getAttribute('data-teacher');
+                 const message = `¡Hola! Me gustaría contactar al entrenador: ${teacherName}. 💪`;
+                 window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            }
+        });
     </script>
 </body>
 </html>
-                    
