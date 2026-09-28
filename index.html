@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKALIBUR GYM | Construimos tu mejor versión</title>
-    <meta name="description" content="Skalibur Gym - Suplementos, accesorios y clases para construir tu mejor versión.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fondo con la imagen real 94957_2.jpg -->
-    <div class="background-parallax"></div>
+    <!-- Fondo Parallax usando tu imagen 'Epic fondo' -->
+    <div class="background-parallax" style="background-image: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), url('images/Epic fondo.jpg');"></div>
 
     <main class="linktree-container">
         <header class="brand-header fade-in">
+            <!-- Logo usando 'Logo fondo' -->
+            <img src="images/Logo fondo.jpg" alt="Skalibur Gym Logo" style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid #00FF66; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,102,0.4);">
             <h1 class="neon-logo">SKALIBUR GYM</h1>
             <p class="slogan">Construimos tu mejor versión</p>
         </header>
@@ -35,7 +36,7 @@
         </footer>
     </main>
 
-    <!-- MODAL TIENDA CON NOMBRES REALES DE IMÁGENES -->
+    <!-- MODAL TIENDA (Con tus nombres reales de archivos) -->
     <div class="modal" id="modal-tienda">
         <div class="modal-content modal-large">
             <button class="close-modal">&times;</button>
@@ -43,158 +44,122 @@
             
             <div class="store-grid">
                 
-                <!-- 1. Creatina ON -->
-                <article class="product-card" data-product-name="Creatina Micronizada Optimum Nutrition 600g">
-                    <div class="card-img-container">
-                        <img src="images/94950.jpg" alt="Creatina ON" loading="lazy">
-                    </div>
+                <article class="product-card" data-product-name="Creatina Micronizada Optimum Nutrition">
+                    <div class="card-img-container"><img src="images/Creatina.jpg" alt="Creatina ON" loading="lazy"></div>
                     <div class="card-body">
-                        <h3>Optimum Nutrition Creatine (600g)</h3>
-                        <p class="product-desc">100% Pura Creatina Monohidratada micronizada. 120 porciones.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <h3>Optimum Nutrition Creatine</h3>
+                        <p class="product-desc">100% Pura Creatina Monohidratada micronizada.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 2. Whey Gold Standard ON -->
                 <article class="product-card" data-product-name="Gold Standard 100% Whey ON">
-                    <div class="card-img-container">
-                        <img src="images/94955.jpg" alt="Gold Standard Whey ON" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Gold standar....jpg" alt="Gold Standard" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Gold Standard 100% Whey ON</h3>
-                        <p class="product-desc">24g de proteína, 5.5g de BCAAs. Sabor Vanilla Ice Cream (9.98 lb).</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">24g de proteína, 5.5g de BCAAs. Sabor Vanilla.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 3. Creatina GMN -->
                 <article class="product-card" data-product-name="Creatina GMN 300g">
-                    <div class="card-img-container">
-                        <img src="images/94951.jpg" alt="Creatina GMN" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Creatina 300g.jpg" alt="Creatina GMN" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Creatina GMN (300g)</h3>
                         <p class="product-desc">Potencia tu rendimiento al máximo. 100 porciones.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 4. Whey Phorm Cappuccino -->
                 <article class="product-card" data-product-name="Whey Phorm Cappuccino">
-                    <div class="card-img-container">
-                        <img src="images/94969.jpg" alt="Whey Phorm Cappuccino" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Whey form.jpg" alt="Whey Phorm" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Whey Phorm Cappuccino</h3>
-                        <p class="product-desc">25g de proteína por porción. Sabor gourmet cremoso e irresistible.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">25g de proteína por porción. Sabor gourmet cremoso.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 5. Burner Stack -->
-                <article class="product-card" data-product-name="Burner Stack Nutramerican Pharma">
-                    <div class="card-img-container">
-                        <img src="images/94963.jpg" alt="Burner Stack" loading="lazy">
-                    </div>
+                <article class="product-card" data-product-name="Burner Stack Nutramerican">
+                    <div class="card-img-container"><img src="images/Burner stack.jpg" alt="Burner Stack" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Burner Stack (360g)</h3>
-                        <p class="product-desc">L-Carnitina, Taurina, Picolinato de Cromo y Cafeína. Sabor Uva.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">L-Carnitina, Taurina, Picolinato de Cromo y Cafeína.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 6. L-Carnitine 3000 Nutrex -->
                 <article class="product-card" data-product-name="L-Carnitine 3000 Nutrex">
-                    <div class="card-img-container">
-                        <img src="images/94962.jpg" alt="L-Carnitine Nutrex" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Creatina otra.jpg" alt="L-Carnitine" loading="lazy"></div>
                     <div class="card-body">
                         <h3>L-Carnitine 3000 Nutrex</h3>
-                        <p class="product-desc">Apoya el metabolismo de las grasas y aporta mayor energía.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">Apoya el metabolismo de las grasas y energía.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 7. HMB Asylum Cabinet -->
                 <article class="product-card" data-product-name="HMB Asylum Cabinet Insane Labz">
-                    <div class="card-img-container">
-                        <img src="images/94961.jpg" alt="HMB Insane Labz" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Hmb.jpg" alt="HMB" loading="lazy"></div>
                     <div class="card-body">
-                        <h3>HMB Asylum Cabinet (120 Caps)</h3>
-                        <p class="product-desc">1,500mg por porción. Favorece la masa muscular y recuperación.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <h3>HMB Asylum Cabinet</h3>
+                        <p class="product-desc">1,500mg por porción. Favorece la masa muscular.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 8. Cardarine GW501516 -->
-                <article class="product-card" data-product-name="Cardarine GW501516 Enhanced Athlete">
-                    <div class="card-img-container">
-                        <img src="images/94952.jpg" alt="Cardarine GW501516" loading="lazy">
-                    </div>
+                <article class="product-card" data-product-name="Cardarine GW501516">
+                    <div class="card-img-container"><img src="images/Caroardine.jpg" alt="Cardarine" loading="lazy"></div>
                     <div class="card-body">
-                        <h3>Cardarine GW501516 (60 Caps)</h3>
-                        <p class="product-desc">Aumenta la resistencia, quema grasa y optimiza el rendimiento.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <h3>Cardarine GW501516</h3>
+                        <p class="product-desc">Aumenta la resistencia, quema grasa y optimiza rendimiento.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 9. Redcon1 MRE Lite -->
                 <article class="product-card" data-product-name="Redcon1 MRE Lite">
-                    <div class="card-img-container">
-                        <img src="images/94960.jpg" alt="Redcon1 MRE Lite" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Mre lite.jpg" alt="MRE Lite" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Redcon1 MRE Lite</h3>
-                        <p class="product-desc">24g de proteína de alimentos enteros sin suero (No Whey).</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">24g de proteína de alimentos enteros sin suero.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 10. Serious Mass ON -->
                 <article class="product-card" data-product-name="Serious Mass Optimum Nutrition">
-                    <div class="card-img-container">
-                        <img src="images/94965.jpg" alt="Serious Mass ON" loading="lazy">
-                    </div>
+                    <div class="card-img-container"><img src="images/Serious mass.jpg" alt="Serious Mass" loading="lazy"></div>
                     <div class="card-body">
-                        <h3>Serious Mass ON (6 lb)</h3>
-                        <p class="product-desc">50g de proteína, 1,250 calorías y 253g de carbohidratos.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <h3>Serious Mass ON</h3>
+                        <p class="product-desc">50g de proteína y 1,250 calorías para ganar masa.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 11. Essential Vita C & Provit -->
-                <article class="product-card" data-product-name="Essential Vita C & Provit Multivitamínico">
-                    <div class="card-img-container">
-                        <img src="images/94953.jpg" alt="Vita C y Provit" loading="lazy">
-                    </div>
+                <article class="product-card" data-product-name="Essential Vita C & Provit">
+                    <div class="card-img-container"><img src="images/Provit.jpg" alt="Provit" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Essential Vita C & Provit</h3>
-                        <p class="product-desc">Fórmula antioxidante y multivitamínica para defensas y energía.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <p class="product-desc">Fórmula antioxidante y multivitamínica.</p>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
 
-                <!-- 12. Silymaxi Medical Green -->
-                <article class="product-card" data-product-name="Silymaxi Milk Thistle 300mg">
-                    <div class="card-img-container">
-                        <img src="images/94966.jpg" alt="Silymaxi" loading="lazy">
-                    </div>
+                <article class="product-card" data-product-name="Silymaxi Medical Green">
+                    <div class="card-img-container"><img src="images/Silymaxi.jpg" alt="Silymaxi" loading="lazy"></div>
                     <div class="card-body">
                         <h3>Silymaxi (60 Cápsulas)</h3>
                         <p class="product-desc">Protector hepático fitoterapéutico con Cardo Mariano.</p>
-                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <div class="product-price">Consultar Precio</div>
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
@@ -210,17 +175,17 @@
             <h2 class="modal-title">📅 Clases y Eventos Especiales</h2>
             <div class="events-list">
                 <div class="event-card">
-                    <img src="images/94944.jpg" alt="Lunes Latino" class="event-img">
+                    <img src="images/Lunes latino.jpg" alt="Lunes Latino" class="event-img">
                     <h3>💃 Lunes Latino</h3>
                     <p>Todos los lunes a las 7:00 PM. ¡Trae a tu invitado!</p>
                 </div>
                 <div class="event-card">
-                    <img src="images/94947.jpg" alt="Jueves Rumbero" class="event-img">
+                    <img src="images/Jueves rumbero.jpg" alt="Jueves Rumbero" class="event-img">
                     <h3>🕺 Jueves Rumbero</h3>
                     <p>Todos los jueves a las 7:00 PM. Rompe la rutina.</p>
                 </div>
                 <div class="event-card">
-                    <img src="images/94948.jpg" alt="Bailando con el Team Monito" class="event-img">
+                    <img src="images/Evento 1 noviembre.jpg" alt="Team Monito" class="event-img">
                     <h3>🔥 Evento Especial: Team Monito Suesca</h3>
                     <p>01 de Noviembre | 6:30 PM | Show de luces, DJ y premios.</p>
                 </div>
@@ -228,17 +193,17 @@
         </div>
     </div>
 
-    <!-- MODAL EQUIPO / COMUNIDAD -->
+    <!-- MODAL EQUIPO -->
     <div class="modal" id="modal-equipo">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <h2 class="modal-title">💪 La Familia Skalibur</h2>
-            <img src="images/94956.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:12px; margin-bottom:1rem;">
+            <img src="images/Nuestra comunidad.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:12px; margin-bottom:1rem;">
             <p>Un equipo enfocado en tu progreso diario. Guía, disciplina y ambiente único en Suesca.</p>
         </div>
     </div>
 
-    <!-- MODALES ADICIONALES -->
+    <!-- MODALES EXTRAS -->
     <div class="modal" id="modal-nuevo">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
@@ -268,10 +233,59 @@
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <h2 class="modal-title">💬 Contáctanos</h2>
-            <p>Haz clic abajo para chatear con nuestro equipo por WhatsApp.</p>
+            <p>Escríbenos directamente a través de nuestros botones de tienda o clases para atenderte al instante.</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalTriggers = document.querySelectorAll('[data-modal-target]');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            const modals = document.querySelectorAll('.modal');
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const modalId = trigger.getAttribute('data-modal-target');
+                    const targetModal = document.querySelector(modalId);
+                    if(targetModal) {
+                        targetModal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; 
+                    }
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            modals.forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Reemplaza por tu número de WhatsApp real (Código de país + número, ej: 573001234567)
+            const WHATSAPP_NUMBER = "573000000000"; 
+            const buyButtons = document.querySelectorAll('.btn-buy');
+
+            buyButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('.product-card');
+                    const productName = card.getAttribute('data-product-name');
+                    const message = `¡Hola Skalibur Gym! 💪 Estoy interesado en adquirir o consultar precio sobre: *${productName}*. ¿Me dan información?`;
+                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            });
+        });
+    </script>
 </body>
-</html>
+        </html>
+        
