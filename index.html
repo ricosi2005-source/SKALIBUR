@@ -37,7 +37,7 @@
             width: 100vw; height: 100vh;
             background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), 
                         url('images/Epic fondo.jpg') center center / cover no-repeat;
-            z-index: -1;
+            z-index: -1; /* Corregido aquí */
         }
 
         .linktree-container {
@@ -98,7 +98,7 @@
             box-shadow: 0 10px 25px rgba(0, 255, 102, 0.3);
         }
 
-        footer { margin-top: 3.5rem; font-size: 0.8rem; color: var(--text-muted); }
+        footer { margin-top: 3.5rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
 
         /* MODALES */
         .modal {
@@ -387,7 +387,7 @@
     <div class="modal" id="modal-ubicacion"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">📍 Ubicación</h2><p>Suesca, Cundinamarca - Tercer piso del Ara.</p></div></div>
     <div class="modal" id="modal-contacto"><div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">💬 Contáctanos</h2><p>Escríbenos directamente a través de nuestros botones de tienda o clases para atenderte al instante.</p></div></div>
 
-    <!-- SCRIPT BLINDADO (Delegación de eventos global) -->
+    <!-- SCRIPT JS GLOBAL -->
     <script>
         document.addEventListener('click', (e) => {
             // Abrir modal
@@ -414,4 +414,4 @@
             // Cerrar haciendo clic afuera del modal
             const modalOverlay = e.target.closest('.modal');
             if (modalOverlay && e.target === modalOverlay) {
-                modalOverlay.classList
+                modalOverla
