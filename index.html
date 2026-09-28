@@ -1,60 +1,277 @@
 <!DOCTYPE html>
-<html class="theme-dark" lang="es">
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skalibur Gym</title>
-<link rel="icon" type="image/png" href="images/logo.png">
-<meta name="description" content="Skalibur Gym - Construimos tu mejor versión">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/brands.css">
-<style>
-body, .container { background:#000000 !important; }
-h1, p { color:#39ff14 !important; }
-.avatar { border:2px solid #39ff14; }
-.button { background-color:#111111 !important; color:#39ff14 !important; border:1px solid #39ff14 !important; }
-.button-whatsapp { background-color:#25D366 !important; color:#ffffff !important; border:none !important; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKALIBUR GYM | Construimos tu mejor versión</title>
+    <meta name="description" content="Skalibur Gym - Suplementos, accesorios y clases para construir tu mejor versión.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-<div class="column">
-<main>
-<img class="avatar avatar--rounded" src="images/logo.png" alt="Skalibur Gym" width="128" height="128">
-<h1>SKALIBUR GYM</h1>
-<p>Construimos tu mejor versión</p>
-<nav class="button-stack" aria-label="Links">
-<a class="button button-default" href="https://drive.google.com/file/d/1JmkzcrFrJoQ2uFmdXA0YAOupwzdDkaiB/view?usp=drivesdk" target="_blank" rel="noopener">🟢 ¿Eres nuevo? ¡Conoce cómo funciona!</a>
+    <!-- Fondo con la imagen real 94957_2.jpg -->
+    <div class="background-parallax"></div>
 
-<!-- 1. BOTÓN QUE ABRE EL HORARIO EN VENTANA FLOTANTE -->
-<button class="button button-default" onclick="document.getElementById('modal-horario').style.display='block'">🕐 Horario de atención</button>
+    <main class="linktree-container">
+        <header class="brand-header fade-in">
+            <h1 class="neon-logo">SKALIBUR GYM</h1>
+            <p class="slogan">Construimos tu mejor versión</p>
+        </header>
 
-<a class="button button-default" href="https://drive.google.com/file/d/1ZVuiC5B1_8BjOgUhelpv31JYAte1kOYu/view?usp=drivesdk" target="_blank" rel="noopener">📅 Clases grupales</a>
+        <section class="action-menu fade-in-up">
+            <button class="glass-btn" data-modal-target="#modal-nuevo">🟢 ¿Eres nuevo? ¡Conoce cómo funciona!</button>
+            <button class="glass-btn" data-modal-target="#modal-horario">🕒 Horario de atención</button>
+            <button class="glass-btn" data-modal-target="#modal-clases">📅 Clases Grupales y Eventos</button>
+            <button class="glass-btn" data-modal-target="#modal-tienda">🛒 Tienda: Suplementos y Accesorios</button>
+            <button class="glass-btn" data-modal-target="#modal-equipo">💪 Nuestra Familia Skalibur</button>
+            <button class="glass-btn" data-modal-target="#modal-ubicacion">📍 Maps (Ubicación)</button>
+            <button class="glass-btn" data-modal-target="#modal-contacto">💬 Contáctanos</button>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 Skalibur Gym. Todos los derechos reservados.</p>
+        </footer>
+    </main>
 
-<!-- Mensajes predeterminados en WhatsApp -->
-<a class="button button-default" href="https://wa.me/573103044322?text=Hola!%20Quiero%20consultar%20disponibilidad%20y%20precios%20de%20suplementos" target="_blank" rel="noopener">💊 Tienda: suplementos y accesorios</a>
-<a class="button button-default" href="https://wa.me/573103044322?text=Hola!%20Me%20gustaría%20agendar%20una%20valoración%20nutricional" target="_blank" rel="noopener">🥗 Valoración nutricional</a>
+    <!-- MODAL TIENDA CON NOMBRES REALES DE IMÁGENES -->
+    <div class="modal" id="modal-tienda">
+        <div class="modal-content modal-large">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">🛒 Suplementación Premium</h2>
+            
+            <div class="store-grid">
+                
+                <!-- 1. Creatina ON -->
+                <article class="product-card" data-product-name="Creatina Micronizada Optimum Nutrition 600g">
+                    <div class="card-img-container">
+                        <img src="images/94950.jpg" alt="Creatina ON" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Optimum Nutrition Creatine (600g)</h3>
+                        <p class="product-desc">100% Pura Creatina Monohidratada micronizada. 120 porciones.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
 
-<a class="button button-instagram" href="https://www.instagram.com/skalibur.gym/" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Instagram">Síguenos en Instagram</a>
-<a class="button button-default" href="https://maps.app.goo.gl/uNCgtRYuFzYkX4dS8" target="_blank" rel="noopener">📍 Cra. 7 #8-97, Suesca</a>
-<a class="button button-whatsapp" href="https://wa.me/573103044322?text=Hola%20Skalibur%20Gym,%20quisiera%20más%20información" target="_blank" rel="noopener"><img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="WhatsApp">Contáctanos</a>
-<a class="button button-default" href="https://www.google.com/maps/place/Skalibur+Gym+Suesca,+Centro+D1,+Cra.+7+%238-97,+Suesca,+Cundinamarca/@5.1030603,-73.7944122,17z/data=!4m6!3m5!1s0x8e40156cedac5711:0xc6218cff9d39be0d!8m2!3d5.1030603!4d-73.7944122!16s%2Fg%2F11stk95s81" target="_blank" rel="noopener">⭐ Déjanos tu opinión</a>
-</nav>
-</main>
-<footer><a href="privacy.html">Privacy Policy</a></footer>
-</div>
-</div>
+                <!-- 2. Whey Gold Standard ON -->
+                <article class="product-card" data-product-name="Gold Standard 100% Whey ON">
+                    <div class="card-img-container">
+                        <img src="images/94955.jpg" alt="Gold Standard Whey ON" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Gold Standard 100% Whey ON</h3>
+                        <p class="product-desc">24g de proteína, 5.5g de BCAAs. Sabor Vanilla Ice Cream (9.98 lb).</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
 
-<!-- 2. VENTANA FLOTANTE DEL HORARIO (DENTRO DE BODY) -->
-<div id="modal-horario" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; padding:20px;">
-  <div style="background:#111; border:2px solid #39ff14; padding:20px; border-radius:10px; max-width:400px; margin:20% auto; text-align:center;">
-    <h2 style="color:#39ff14; margin-bottom:15px;">Horario Skalibur Gym</h2>
-    <p style="color:#fff;">Lunes a Viernes: 6:00 AM - 9:30 PM</p>
-    <p style="color:#fff;">Sábados y Festivos: 8:00 AM - 2:00 PM</p>
-    <button onclick="document.getElementById('modal-horario').style.display='none'" style="margin-top:20px; background:#39ff14; color:#000; padding:8px 15px; font-weight:bold; border:none; border-radius:5px; cursor:pointer;">Cerrar</button>
-  </div>
-</div>
+                <!-- 3. Creatina GMN -->
+                <article class="product-card" data-product-name="Creatina GMN 300g">
+                    <div class="card-img-container">
+                        <img src="images/94951.jpg" alt="Creatina GMN" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Creatina GMN (300g)</h3>
+                        <p class="product-desc">Potencia tu rendimiento al máximo. 100 porciones.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
 
+                <!-- 4. Whey Phorm Cappuccino -->
+                <article class="product-card" data-product-name="Whey Phorm Cappuccino">
+                    <div class="card-img-container">
+                        <img src="images/94969.jpg" alt="Whey Phorm Cappuccino" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Whey Phorm Cappuccino</h3>
+                        <p class="product-desc">25g de proteína por porción. Sabor gourmet cremoso e irresistible.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 5. Burner Stack -->
+                <article class="product-card" data-product-name="Burner Stack Nutramerican Pharma">
+                    <div class="card-img-container">
+                        <img src="images/94963.jpg" alt="Burner Stack" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Burner Stack (360g)</h3>
+                        <p class="product-desc">L-Carnitina, Taurina, Picolinato de Cromo y Cafeína. Sabor Uva.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 6. L-Carnitine 3000 Nutrex -->
+                <article class="product-card" data-product-name="L-Carnitine 3000 Nutrex">
+                    <div class="card-img-container">
+                        <img src="images/94962.jpg" alt="L-Carnitine Nutrex" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>L-Carnitine 3000 Nutrex</h3>
+                        <p class="product-desc">Apoya el metabolismo de las grasas y aporta mayor energía.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 7. HMB Asylum Cabinet -->
+                <article class="product-card" data-product-name="HMB Asylum Cabinet Insane Labz">
+                    <div class="card-img-container">
+                        <img src="images/94961.jpg" alt="HMB Insane Labz" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>HMB Asylum Cabinet (120 Caps)</h3>
+                        <p class="product-desc">1,500mg por porción. Favorece la masa muscular y recuperación.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 8. Cardarine GW501516 -->
+                <article class="product-card" data-product-name="Cardarine GW501516 Enhanced Athlete">
+                    <div class="card-img-container">
+                        <img src="images/94952.jpg" alt="Cardarine GW501516" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Cardarine GW501516 (60 Caps)</h3>
+                        <p class="product-desc">Aumenta la resistencia, quema grasa y optimiza el rendimiento.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 9. Redcon1 MRE Lite -->
+                <article class="product-card" data-product-name="Redcon1 MRE Lite">
+                    <div class="card-img-container">
+                        <img src="images/94960.jpg" alt="Redcon1 MRE Lite" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Redcon1 MRE Lite</h3>
+                        <p class="product-desc">24g de proteína de alimentos enteros sin suero (No Whey).</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 10. Serious Mass ON -->
+                <article class="product-card" data-product-name="Serious Mass Optimum Nutrition">
+                    <div class="card-img-container">
+                        <img src="images/94965.jpg" alt="Serious Mass ON" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Serious Mass ON (6 lb)</h3>
+                        <p class="product-desc">50g de proteína, 1,250 calorías y 253g de carbohidratos.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 11. Essential Vita C & Provit -->
+                <article class="product-card" data-product-name="Essential Vita C & Provit Multivitamínico">
+                    <div class="card-img-container">
+                        <img src="images/94953.jpg" alt="Vita C y Provit" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Essential Vita C & Provit</h3>
+                        <p class="product-desc">Fórmula antioxidante y multivitamínica para defensas y energía.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+                <!-- 12. Silymaxi Medical Green -->
+                <article class="product-card" data-product-name="Silymaxi Milk Thistle 300mg">
+                    <div class="card-img-container">
+                        <img src="images/94966.jpg" alt="Silymaxi" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3>Silymaxi (60 Cápsulas)</h3>
+                        <p class="product-desc">Protector hepático fitoterapéutico con Cardo Mariano.</p>
+                        <div class="product-price">[CONSULTAR PRECIO]</div>
+                        <button class="cta-btn btn-buy">Comprar / Consultar</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CLASES Y EVENTOS -->
+    <div class="modal" id="modal-clases">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">📅 Clases y Eventos Especiales</h2>
+            <div class="events-list">
+                <div class="event-card">
+                    <img src="images/94944.jpg" alt="Lunes Latino" class="event-img">
+                    <h3>💃 Lunes Latino</h3>
+                    <p>Todos los lunes a las 7:00 PM. ¡Trae a tu invitado!</p>
+                </div>
+                <div class="event-card">
+                    <img src="images/94947.jpg" alt="Jueves Rumbero" class="event-img">
+                    <h3>🕺 Jueves Rumbero</h3>
+                    <p>Todos los jueves a las 7:00 PM. Rompe la rutina.</p>
+                </div>
+                <div class="event-card">
+                    <img src="images/94948.jpg" alt="Bailando con el Team Monito" class="event-img">
+                    <h3>🔥 Evento Especial: Team Monito Suesca</h3>
+                    <p>01 de Noviembre | 6:30 PM | Show de luces, DJ y premios.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EQUIPO / COMUNIDAD -->
+    <div class="modal" id="modal-equipo">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">💪 La Familia Skalibur</h2>
+            <img src="images/94956.jpg" alt="Equipo Skalibur" style="width:100%; border-radius:12px; margin-bottom:1rem;">
+            <p>Un equipo enfocado en tu progreso diario. Guía, disciplina y ambiente único en Suesca.</p>
+        </div>
+    </div>
+
+    <!-- MODALES ADICIONALES -->
+    <div class="modal" id="modal-nuevo">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">🟢 ¿Eres Nuevo?</h2>
+            <p>Bienvenido a Skalibur Gym. Te ofrecemos evaluación inicial, rutina personalizada y ambiente de alto nivel.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-horario">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">🕒 Horario de Atención</h2>
+            <p><strong>Lunes a Viernes:</strong> 5:30 AM - 9:30 PM</p>
+            <p><strong>Sábados y Festivos:</strong> 7:00 AM - 2:00 PM</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-ubicacion">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">📍 Ubicación</h2>
+            <p>Suesca, Cundinamarca - Tercer piso del Ara.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-contacto">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">💬 Contáctanos</h2>
+            <p>Haz clic abajo para chatear con nuestro equipo por WhatsApp.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
