@@ -7,15 +7,301 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0B0B0B;
+            --accent-green: #00FF66;
+            --text-light: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --glass-bg: rgba(18, 18, 18, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+            --font-main: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .background-parallax {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), 
+                        url('images/Epic fondo.jpg') center center / cover no-repeat;
+            z-index: -1;
+        }
+
+        .linktree-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .neon-logo {
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .slogan {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .action-menu {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .glass-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+        }
+
+        .glass-btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-green);
+            background: rgba(0, 255, 102, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 255, 102, 0.25);
+        }
+
+        footer {
+            margin-top: 3.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-dark);
+            border: 1px solid var(--accent-green);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.95);
+            transition: var(--transition);
+            box-shadow: 0 0 40px rgba(0, 255, 102, 0.15);
+        }
+
+        .modal-large {
+            max-width: 1050px;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-green);
+        }
+
+        .modal-title {
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .product-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-4px);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 220px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: #fff;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-top: auto;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--accent-green);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--text-light);
+            box-shadow: 0 0 15px var(--accent-green);
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .event-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        .fade-in { animation: fadeIn 0.8s ease forwards; }
+        .fade-in-up { animation: fadeInUp 0.8s ease forwards; animation-delay: 0.2s; opacity: 0; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body>
-    <!-- Fondo Parallax usando tu imagen 'Epic fondo' -->
-    <div class="background-parallax" style="background-image: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), url('images/Epic fondo.jpg');"></div>
+    <div class="background-parallax"></div>
 
     <main class="linktree-container">
         <header class="brand-header fade-in">
-            <!-- Logo usando 'Logo fondo' -->
             <img src="images/Logo fondo.jpg" alt="Skalibur Gym Logo" style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid #00FF66; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,102,0.4);">
             <h1 class="neon-logo">SKALIBUR GYM</h1>
             <p class="slogan">Construimos tu mejor versión</p>
@@ -36,14 +322,13 @@
         </footer>
     </main>
 
-    <!-- MODAL TIENDA (Con tus nombres reales de archivos) -->
+    <!-- MODAL TIENDA -->
     <div class="modal" id="modal-tienda">
         <div class="modal-content modal-large">
             <button class="close-modal">&times;</button>
             <h2 class="modal-title">🛒 Suplementación Premium</h2>
             
             <div class="store-grid">
-                
                 <article class="product-card" data-product-name="Creatina Micronizada Optimum Nutrition">
                     <div class="card-img-container"><img src="images/Creatina.jpg" alt="Creatina ON" loading="lazy"></div>
                     <div class="card-body">
@@ -163,12 +448,11 @@
                         <button class="cta-btn btn-buy">Comprar / Consultar</button>
                     </div>
                 </article>
-
             </div>
         </div>
     </div>
 
-    <!-- MODAL CLASES Y EVENTOS -->
+    <!-- MODAL CLASES -->
     <div class="modal" id="modal-clases">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
@@ -205,87 +489,7 @@
 
     <!-- MODALES EXTRAS -->
     <div class="modal" id="modal-nuevo">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2 class="modal-title">🟢 ¿Eres Nuevo?</h2>
-            <p>Bienvenido a Skalibur Gym. Te ofrecemos evaluación inicial, rutina personalizada y ambiente de alto nivel.</p>
-        </div>
+        <div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">🟢 ¿Eres Nuevo?</h2><p>Bienvenido a Skalibur Gym. Te ofrecemos evaluación inicial, rutina personalizada y ambiente de alto nivel.</p></div>
     </div>
-
     <div class="modal" id="modal-horario">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2 class="modal-title">🕒 Horario de Atención</h2>
-            <p><strong>Lunes a Viernes:</strong> 5:30 AM - 9:30 PM</p>
-            <p><strong>Sábados y Festivos:</strong> 7:00 AM - 2:00 PM</p>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-ubicacion">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2 class="modal-title">📍 Ubicación</h2>
-            <p>Suesca, Cundinamarca - Tercer piso del Ara.</p>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-contacto">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2 class="modal-title">💬 Contáctanos</h2>
-            <p>Escríbenos directamente a través de nuestros botones de tienda o clases para atenderte al instante.</p>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modalTriggers = document.querySelectorAll('[data-modal-target]');
-            const closeButtons = document.querySelectorAll('.close-modal');
-            const modals = document.querySelectorAll('.modal');
-
-            modalTriggers.forEach(trigger => {
-                trigger.addEventListener('click', () => {
-                    const modalId = trigger.getAttribute('data-modal-target');
-                    const targetModal = document.querySelector(modalId);
-                    if(targetModal) {
-                        targetModal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; 
-                    }
-                });
-            });
-
-            closeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modal = button.closest('.modal');
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-
-            modals.forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            });
-
-            // Reemplaza por tu número de WhatsApp real (Código de país + número, ej: 573001234567)
-            const WHATSAPP_NUMBER = "573000000000"; 
-            const buyButtons = document.querySelectorAll('.btn-buy');
-
-            buyButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const card = e.target.closest('.product-card');
-                    const productName = card.getAttribute('data-product-name');
-                    const message = `¡Hola Skalibur Gym! 💪 Estoy interesado en adquirir o consultar precio sobre: *${productName}*. ¿Me dan información?`;
-                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                    window.open(whatsappUrl, '_blank');
-                });
-            });
-        });
-    </script>
-</body>
-        </html>
-        
+        <div class="modal-content"><button class="close-modal">&times;</button><h2 class="modal-title">🕒 Horario de Atención</h2><p><strong>Lunes a Viernes:</strong> 5:30 AM - 9:30 PM</p><p><strong>Sábados y Festivos:</strong> 7:00 AM - 2:00 PM</p></div>
